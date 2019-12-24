@@ -1,0 +1,55 @@
+﻿<html>
+
+<head>
+    <base target="_self" />
+    <meta charset="utf-8" />
+    <meta name=renderer content=webkit>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <link type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../ELEC/js/jquery.form.js"></script>
+    <script type="text/javascript" src="../../ELEC/js/jquery.media.js"></script>
+    <script type="text/javascript" src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../ELEC/js/fileinput.min.js"></script> -->
+    <!--<script type="text/javascript" src="node_modules/requirejs/require.js"></script>-->
+</head>
+
+<body>
+    <div id="formWrap">
+        <form enctype="multipart/form-data" id="thisForm" class="cmsform">
+            用户名：<input id='name' type='text' name="userName" />
+            密码：<input id='pwd' type='password' name="userPwd" />
+            <p>
+                imgFile:<input id="file-1" type="file" name="imgFile" multiple accept="image/jpeg" class="file" /><br />
+            </p>
+            <p>
+                <!-- pdfFile:<input id="file-2" type="file" name="pdfFile" multiple accept="pdf/*" class="file" /> -->
+            </p>
+            <button type="button" id="submit">
+                开始发布
+            </button>
+        </form>
+    </div>
+    <!-- <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.form.min.js"></script>
+    <script src="./assets/js/require.js"></script>
+    <script src="./built/require-config.js"></script> -->
+    <script src="./built/compress.js"></script>
+    <script>
+        window.onload = function () {
+            var submit = document.getElementById('submit');
+            var postUrl = 'http://localhost:7710/ELEC/odata/CompoentParts/Uploader';
+            var imgQt = {
+                quality: 0.3
+            };
+            submit.onclick = function () {
+                compressInit('thisForm', 'imgFile', 100, imgQt, postUrl);
+            };
+        }
+    </script>
+
+</body>
+
+</html>

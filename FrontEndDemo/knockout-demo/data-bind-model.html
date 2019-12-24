@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    model:<span data-bind="text:model"></span>
+    model.city:<span data-bind="text:model.city"></span>
+    model.coords:<span data-bind="text:model.coords"></span>
+    model.coords.latitude:<span data-bind="text:model.coords.latitude"></span>
+    model.coords.longitude:<span data-bind="text:model.coords.longitude"></span>
+
+    <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.4.2.js'></script>
+    <script type="text/javascript">
+        var model = {
+            city: "London",
+            coords: {
+                latitude: 51.5001524,
+                longitude: -0.1262362
+            }
+        };
+        ko.applyBindings(model);
+    </script>
+</body>
+
+</html>

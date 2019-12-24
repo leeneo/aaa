@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../ejdemo/css/bootstrap-theme/ej.web.all.min.css">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+    <script src="../ejdemo/js/jquery-1.10.2.min.js"></script>
+    <script src="../ejdemo/js/jquery.easing.1.3.min.js"></script>
+    <script src="../ejdemo./js/jsrender.min.js"></script>
+    <script src="../ejdemo./js/ej.web.all.min.js"></script>
+    <script src="../ejdemo./js/ej.culture.zh-CN.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type='text/javascript' src='../assets/js/knockout-3.4.2.js'></script>
+    <script type='text/javascript' src='../assets/js/knockout.mapping.min.js'></script>
+    <script src="../ejdemo/js/ej.widget.ko.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lq-radio-group" data-bind="foreach: PositionTypes">
+        <div class="lq-radio">
+            <input class="lq-radio__input" type="radio" name="lq-radio"
+                data-bind="ejRadioButton: {checked: id==$root.CheckedTypeID?true:false,value:value},attr:{id:'ej-type-'+id}" />
+                <span class="lq-radio__label" data-bind="text:id"></span>
+                <span class="lq-radio__label" data-bind="text:value"></span>
+            </div>
+    </div>
+
+    CheckedTypeID: <a data-bind="text:CheckedTypeID"></a>
+
+    <script type='text/javascript' src='../built/test.js'></script>
+</body>
+
+</html>

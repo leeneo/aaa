@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        The name is <input data-bind="value: personName"></input>
+        <age:input data-bind="text:personAge"> </age:input>
+    </form>
+    <form id="form2" runat="server">
+        The name is <input data-bind="value: personName"></input>
+        <age:input data-bind="text:personAge"> </age:input>
+    </form>
+
+    <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.4.2.js'></script>
+    <script type="text/javascript">
+        //1、View Model（数据模型）
+        // myViewModel.personName("bobbb");
+        var myViewModel = {
+            //监控(Observable):视图模型变化自动更新你的UI
+            personName: ko.observable(),
+            personAge: ko.observable(123)
+        };
+        myViewModel.personName("优先于构造2");
+        myViewModel.personName = "优先于构造"; //优先级高于personName(''),如果属性赋值在参数赋值前，参数赋值会报错
+        ko.applyBindings(myViewModel, document.getElementById('form1'))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        The name is <input data-bind="value: personName,change:function(){console.log(personName)}"></input>
+        <age:input data-bind="value:personAge">
+            </age:input>
+    </form>
+
+    <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.4.2.js'></script>
+    <script type="text/javascript">
+        //1、View Model（数据模型）
+        var myViewModel = {
+            //监控(Observable):视图模型变化自动更新你的UI
+            personName: ko.observable('Bob'),
+            personAge: ko.observable(123)
+        };
+
+        function action() {
+            ko.applyBindings(myViewModel);
+            //3、写监控属性
+            myViewModel.personName('Mary')
+            // //读监控属性
+            console.log(myViewModel.personName());
+        }
+        window.onload = action
+    </script>
+</body>
+
+</html>

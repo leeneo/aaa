@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./built/",
+    "rootDir": "./src/",
+    "declaration": true,
+    "sourceMap": false,
+    "noImplicitAny": true,
+    // "module": "amd",
+    "target": "es5"
+  },
+  "include": ["./src/**/*"],
+  "files": [
+    "./src/index.ts",
+    "./src/require-config.ts",
+    "./src/hello.ts",
+    "./src/knockout-test.ts",
+    "./src/greeter.ts",
+    "./src/compapp.ts",
+    "./src/test.ts"
+    // ,     "./src/compress.ts"
+  ]
+}

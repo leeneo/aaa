@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>ko foreach 的两种形式</h4>
+    <h5>形式1：foreach指令加在循环元素父元素上 如：ul d</h5>
+    <!-- <ul data-bind="foreach:people">
+        <li data-bind="text:firstName+'-'+lastName"></li>
+    </ul> -->
+
+    <h5>形式2：ko 注释片断，包括循环元素 &lt;!--ko foreach:people --&gt; li &lt;!--/ko--&gt; </h5>
+    <ul>
+        <!--ko foreach:people -->
+        <li data-bind="text:$data"></li>
+        <!-- /ko -->
+    </ul>
+
+    <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.4.2.js'></script>
+    <script type="text/javascript">
+        ko.applyBindings({
+            // people: [{
+            //     firstName: "李",
+            //     lastName: "明"
+            // }, {
+            //     firstName: "阳",
+            //     lastName: "光"
+            // }, {
+            //     firstName: '海',
+            //     lastName: '洋'
+            // }]
+            people: ['李明','阳光','海洋']
+        });
+    </script>
+</body>
+
+</html>

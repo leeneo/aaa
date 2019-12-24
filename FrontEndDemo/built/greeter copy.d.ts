@@ -1,0 +1,16 @@
+declare class Student {
+    firstName: string;
+    middleInitial: string;
+    lastName: string;
+    fullName: string;
+    constructor(firstName: string, middleInitial: string, lastName: string);
+}
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+declare let user: {
+    firstName: string;
+    lastName: string;
+};
+declare var ele: HTMLElement;

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello Knockout!</title>
+</head>
+
+<body>
+    <a id='addM' class="e-text CanSelect"><span>主板<b class="grayb">（必选项）</b></span>
+        <div id="AddFunc" data-bind="click:AddFunc">DDDDD </div>
+    </a>
+
+
+    <!-- <script src="./assets/js/require.js"></script>
+    <script src="./built/require-config.js"></script> -->
+    <script>
+        var a = document.getElementById('addM');
+        a.onclick = function (args) {
+            console.log('a');
+            console.log(args)
+        };
+        var div = document.getElementById('AddFunc');
+        div.onclick = function (args) {
+            console.log(args)
+            args.stopPropagation()
+        };
+        // require(["built/index"]);
+    </script>
+</body>
+
+</html>

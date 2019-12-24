@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="https://cdn.syncfusion.com/17.2.0.28/js/web/bootstrap-theme/ej.web.all.min.css"> -->
+    <link rel="stylesheet" href="../ejdemo/css/bootstrap-theme/ej.web.all.min.css">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+    <script src="../ejdemo/js/jquery-1.10.2.min.js"></script>
+    <script src="../ejdemo/js/jquery.easing.1.3.min.js"></script>
+    <script src="../ejdemo./js/jsrender.min.js"></script>
+    <script src="../ejdemo./js/ej.web.all.min.js"></script>
+    <script src="../ejdemo./js/ej.culture.zh-CN.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!-- <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.4.2.js'></script> -->
+    <script type='text/javascript' src='../assets/js/knockout-3.4.2.js'></script>
+    <script type='text/javascript' src='../assets/js/knockout.mapping-latest.js'></script>
+    <script src="../ejdemo/js/ej.widget.ko.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <input name="test" id='test' type="text" data-bind="value:city" />
+    <input name="test" id='test2' type="text" data-bind="value:TestValue" />
+    <input id="startDate" type="date" />
+    <input name="moduleName" type="text" id='mdName' /> -->
+
+    <span>Value1:</span> <a data-bind="text:Value1"></a>
+    <input type="text" data-bind="ejDropDownList:{
+        dataSource: Source1,
+        fields: {
+            text: 'text',
+            value: 'value'
+        },
+        value: Value1
+    }" />
+    <span>Value2:</span> <a data-bind="text:Value1"></a>
+    <input type="text" data-bind="ejDropDownList:{
+        dataSource: Source2,
+        query:Source2Query,
+        fields: {
+            text: 'text',
+            value: 'value'
+        },
+        value: Value2
+    }" />
+
+    <ul data-bind="foreach:DataList">
+        <li data-bind="attr:{'data-value':value}">
+            <input type="text" data-bind="ejDropDownList:{
+                dataSource: $root.Source1,
+                fields: {
+                    text: 'text',
+                    value: 'value'
+                },
+                value: $root.Value1
+            }" />        
+        </li>
+    </ul>
+
+    <script type='text/javascript' src='../built/test.js'></script>
+</body>
+
+</html>

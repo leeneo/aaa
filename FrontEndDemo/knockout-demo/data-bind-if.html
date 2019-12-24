@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.4.2.js'></script>
+</head>
+
+<body>
+    <ul data-bind="foreach: planets">
+        <li>
+            Planet:
+            <b data-bind="text: name">
+            </b>
+            <div data-bind="if: capital">
+                Capital:
+                <b data-bind="text: capital.cityName">
+                </b>
+            </div>
+            <div data-bind="ifnot: capital">
+                Capital:
+                <b data-bind="text: 'capital is null'">
+                </b>
+            </div>
+        </li>
+    </ul>
+    <script>
+        ko.applyBindings({
+            planets: [{
+                name: 'Mercury',
+                capital: null
+            },
+            {
+                name: 'Earth',
+                capital: {
+                    cityName: 'Barnsley'
+                }
+            }]
+        });
+    </script>
+</body>
+
+</html>

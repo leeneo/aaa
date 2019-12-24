@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.4.2.js'></script>
+</head>
+
+<body>
+    <label>
+        <input type="checkbox" data-bind="checked: displayMessage" />
+        Display message
+    </label>
+    <div data-bind="if: displayMessage">
+        Here is a true message
+    </div>
+    <!-- <div data-bind="visible:displayMessage">
+        Here is a true message
+    </div> -->
+    <!-- <div data-bind="ifnot:displayMessage">
+        Here is a false message
+    </div> -->
+
+    <!-- <div data-bind="!if:displayMessage">
+        这里的数据只绑定一次
+    </div> -->
+    <!-- <div data-bind="!visible:displayMessage">
+        这里的数据只绑定一次
+    </div> -->
+
+    <script type="text/javascript">
+        ko.applyBindings({
+            test: true,
+            displayMessage: ko.observable(false)
+        });
+    </script>
+</body>
+
+</html>
